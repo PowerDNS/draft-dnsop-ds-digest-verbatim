@@ -1,7 +1,7 @@
 %%%
 title = "The VERBATIM Digest Algorithm for DS records"
 abbrev = "ds-digest-verbatim"
-docName = "draft-vandijk-dnsop-ds-digest-verbatim-01"
+docName = "draft-vandijk-dnsop-ds-digest-verbatim-01+"
 category = "std"
 
 ipr = "trust200902"
@@ -11,7 +11,7 @@ keyword = ["Internet-Draft"]
 
 [seriesInfo]
 name = "Internet-Draft"
-value = "draft-vandijk-dnsop-ds-digest-verbatim-01"
+value = "draft-vandijk-dnsop-ds-digest-verbatim-01+"
 stream = "IETF"
 status = "standard"
 
