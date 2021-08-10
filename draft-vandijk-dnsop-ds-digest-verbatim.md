@@ -1,7 +1,7 @@
 %%%
 title = "The VERBATIM Digest Algorithm for DS records"
 abbrev = "ds-digest-verbatim"
-docName = "draft-vandijk-dnsop-ds-digest-verbatim-00"
+docName = "draft-vandijk-dnsop-ds-digest-verbatim-01"
 category = "std"
 
 ipr = "trust200902"
@@ -11,7 +11,7 @@ keyword = ["Internet-Draft"]
 
 [seriesInfo]
 name = "Internet-Draft"
-value = "draft-vandijk-dnsop-ds-digest-verbatim-00"
+value = "draft-vandijk-dnsop-ds-digest-verbatim-01"
 stream = "IETF"
 status = "standard"
 
@@ -45,7 +45,9 @@ That hashing operation makes any data inside the (C)DNSKEY record unreachable un
 Thus, DS records do not actually convey information; they merely verify information that can be retrieved elsewhere.
 
 A DS record set can only answer the question 'this data that I have here, do you recognise it?'.
+In that sense, DS records are not information sources - they are boolean oracles.
 For several imagined use cases for signed data at the parent, this might not be sufficient.
+One such use case is https://datatracker.ietf.org/doc/draft-schwartz-ds-glue/.
 
 This document introduces a new Digest Algorithm, proposed name VERBATIM (alternative suggestion: NULL).
 The VERBATIM Digest Algorithm takes the input data (DNSKEY owner name | DNSKEY RDATA per section 5.1.4 of [@!RFC4034]) and copies it unmodified into the DS Digest field.
@@ -86,7 +88,12 @@ However, a likely outcome is that domain registries will only allow the VERBATIM
 
 # Security Considerations
 
-FIXME
+Previously existing DS Digest Algorithms have a fixed size output.
+The VERBATIM digest has a variable size output, that may be under the control of a third party, like the owner of a delegated domain.
+Such a third party might cause zone files to grow very big with just a few data submissions to a registrar/registry.
+DNS query responses containing VERBATIM digests might also be bigger than is desired.
+
+Implementors, specifically domain registries, may want to limit use of VERBATIM to specified use cases, and with limits appropriate to those use cases.
 
 # Implementation Status
 
