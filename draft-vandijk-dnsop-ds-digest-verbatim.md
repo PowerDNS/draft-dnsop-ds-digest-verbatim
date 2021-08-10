@@ -47,7 +47,7 @@ Thus, DS records do not actually convey information; they merely verify informat
 A DS record set can only answer the question 'this data that I have here, do you recognise it?'.
 In that sense, DS records are not information sources - they are boolean oracles.
 For several imagined use cases for signed data at the parent, this might not be sufficient.
-One such use case is https://datatracker.ietf.org/doc/draft-schwartz-ds-glue/.
+One such use case is https://datatracker.ietf.org/doc/draft-schwartz-ds-glue/ [FIXME: make this a proper ref].
 
 This document introduces a new Digest Algorithm, proposed name VERBATIM (alternative suggestion: NULL).
 The VERBATIM Digest Algorithm takes the input data (DNSKEY owner name | DNSKEY RDATA per section 5.1.4 of [@!RFC4034]) and copies it unmodified into the DS Digest field.
