@@ -1,7 +1,7 @@
 %%%
 title = "The VERBATIM Digest Algorithm for DS records"
 abbrev = "ds-digest-verbatim"
-docName = "draft-vandijk-dnsop-ds-digest-verbatim-01+"
+docName = "draft-vandijk-dnsop-ds-digest-verbatim-02"
 category = "std"
 
 ipr = "trust200902"
@@ -11,7 +11,7 @@ keyword = ["Internet-Draft"]
 
 [seriesInfo]
 name = "Internet-Draft"
-value = "draft-vandijk-dnsop-ds-digest-verbatim-01+"
+value = "draft-vandijk-dnsop-ds-digest-verbatim-02"
 stream = "IETF"
 status = "standard"
 
@@ -44,12 +44,11 @@ The currently defined DS Digest Algorithms take the input data and hash it into 
 That hashing operation makes any data inside the (C)DNSKEY record unreachable until that data is retrieved from the child zone.
 Thus, DS records do not actually convey information; they merely verify information that can be retrieved elsewhere.
 
-A DS record set can only answer the question 'this data that I have here, do you recognise it?'.
+A DS record set can only answer the question "this data that I have here, do you recognise it?"
 In that sense, DS records are not information sources - they are boolean oracles.
-For several imagined use cases for signed data at the parent, this might not be sufficient.
-One such use case is https://datatracker.ietf.org/doc/draft-schwartz-ds-glue/ [FIXME: make this a proper ref].
+For some use cases for signed data at the parent, such an an oracle might not be sufficient.
 
-This document introduces a new Digest Algorithm, proposed name VERBATIM (alternative suggestion: NULL).
+This document introduces a new Digest Algorithm, proposed name VERBATIM (alternative suggestions: NULL, IDENTITY).
 The VERBATIM Digest Algorithm takes the input data (DNSKEY owner name | DNSKEY RDATA per section 5.1.4 of [@!RFC4034]) and copies it unmodified into the DS Digest field.
 
 # Document work
